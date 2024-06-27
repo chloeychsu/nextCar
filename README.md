@@ -14,11 +14,18 @@ dotnet add package Npgsql.EntityFrameworkCore.PostgreSQL
 dotnet tool list -g
 dotnet tool install dotnet-ef -g 
 dotnet tool update dotnet-ef -g 
-
+// 建置
 dotnet ef migrations add "InitialCreate" -o Data/Migrations
+dotnet ef database update
+// 刪除
+dotnet ef database drop
 ```
 
 ## Github
 ```cs
 dotnet new gitignore
 ```
+
+## VSCode Extensions
+[NuGet Gallery](https://marketplace.visualstudio.com/items?itemName=patcx.vscode-nuget-gallery)
+[PostgreSQL](https://marketplace.visualstudio.com/items?itemName=ckolkman.vscode-postgres)

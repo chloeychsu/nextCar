@@ -8,7 +8,8 @@ builder.Services.AddControllers();
 builder.Services.AddDbContext<AuctionDbContext>(opt =>{
     opt.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection"));
 });
-
+// 從 assembilies 找到所有繼承 Profile 的物件並提供服務
+builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
 var app = builder.Build();
 
@@ -17,5 +18,14 @@ var app = builder.Build();
 app.UseAuthorization();
 
 app.MapControllers();
+
+try
+{
+    DbInitializer.InitDb(app);
+}
+catch (System.Exception e)
+{
+    Console.WriteLine(e);
+}
 
 app.Run();
