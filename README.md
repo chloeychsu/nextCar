@@ -20,7 +20,18 @@ dotnet ef database update
 // 刪除
 dotnet ef database drop
 ```
+## Search Service
 
+```cs
+dotnet new webapi -o src/SearchService
+
+// Nuget Packages
+dotnet add package MongoDB.Entities
+dotnet add package AutoMapper.Extensions.Microsoft.DependencyInjection
+
+
+
+```
 ## Github
 ```cs
 dotnet new gitignore
@@ -29,3 +40,4 @@ dotnet new gitignore
 ## VSCode Extensions
 [NuGet Gallery](https://marketplace.visualstudio.com/items?itemName=patcx.vscode-nuget-gallery)
 [PostgreSQL](https://marketplace.visualstudio.com/items?itemName=ckolkman.vscode-postgres)
+[MongoDB for VS Code](https://marketplace.visualstudio.com/items?itemName=mongodb.mongodb-vscode)
