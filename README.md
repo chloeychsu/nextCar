@@ -28,6 +28,7 @@ dotnet new webapi -o src/SearchService
 // Nuget Packages
 dotnet add package MongoDB.Entities
 dotnet add package AutoMapper.Extensions.Microsoft.DependencyInjection
+dotnet add package Microsoft.Extensions.Http.Polly
 
 
 
